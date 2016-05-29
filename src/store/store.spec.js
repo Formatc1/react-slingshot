@@ -5,16 +5,13 @@ import rootReducer from '../reducers';
 import initialState from '../reducers/initialState';
 
 describe('Store', () => {
-  it('should create store with initial state', () => {
+  it('should create store with routing', () => {
     const store = createStore(rootReducer, initialState);
 
     const expected = {
-      routing: {
-        locationBeforeTransitions: null
-      },
-      reducer: {}
+      locationBeforeTransitions: null
     };
 
-    expect(store.getState()).to.deep.equal(expected);
+    expect(store.getState().routing).to.deep.equal(expected);
   });
 });
